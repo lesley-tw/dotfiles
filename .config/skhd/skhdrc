@@ -1,7 +1,7 @@
 alt - return : open -na 'Alacritty'
 alt + shift - return : open -na 'Google Chrome'
 alt - s : open -na 'flameshot' --args gui
-alt - n : open /Users/kirintw
+alt - n : open /Users/lesley_lin
 
 shift + alt - q : yabai -m window --close
 

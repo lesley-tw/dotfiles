@@ -10,7 +10,7 @@ function dspull() {
   INPUT_FILE_PATH="$1"
   mkdir -p $(dirname ${INPUT_FILE_PATH})
   touch "$INPUT_FILE_PATH"
-  
+
   # Use grealpath on macOS, realpath on Linux
   if [[ "$(uname -s)" == "Darwin" ]]; then
     FILE_PATH_RELATIVE_TO_HOME=$(grealpath --relative-to="$HOME" "$INPUT_FILE_PATH")
@@ -19,7 +19,7 @@ function dspull() {
     FILE_PATH_RELATIVE_TO_HOME=$(realpath --relative-to="$HOME" "$INPUT_FILE_PATH")
     FILE_PATH_ABSOLUTE=$(realpath "$INPUT_FILE_PATH")
   fi
-  
+
   TITLE="~/$FILE_PATH_RELATIVE_TO_HOME"
 
   echo "Pulling $FILE_PATH_ABSOLUTE"
@@ -65,30 +65,16 @@ mkdir -p "$XDG_CONFIG_HOME"/{alacritty,aws,bat,docker,k9s,nvim,tealdeer,zsh}
 mkdir -p "$XDG_DATA_HOME"/{docker-machine,go,node,nvim,zinit,zlua,zsh}
 mkdir -p "$XDG_CACHE_HOME"/{tealdeer,zcompdump}
 mkdir -p "$XDG_CACHE_HOME/zinit/completions" # zinit helm zsh plugin workaround
-mkdir -p "$HOME/Documents/works/personal"
+mkdir -p "$HOME/Documents/personal"
 
 touch "$XDG_CONFIG_HOME"/aws/{config,credentials}
 touch "$XDG_DATA_HOME/zlua/.zlua"
 mkdir -p "$HOME/.local/bin"
 
-rm -f "$HOME/.local/share/applications/mimeapps.list"
-rm -f "$HOME/.config/mimeapps.list"
-
-if [[ "$(uname -s)" == "Darwin" ]]; then
-  mkdir -p "$HOME/.1password"
-  ln -s "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
-  sudo mkdir -p /opt/1password
-  sudo ln -s /Applications/1Password.app/Contents/MacOS/op-ssh-sign /opt/1password/op-ssh-sign
-  ln -s /usr/local/opt/openvpn/sbin/openvpn "$HOME/.local/bin/openvpn"
-fi
-export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
-
 dspullall
 fetchkeys
 
 alias dotfiles="git --git-dir=$XDG_DATA_HOME/dotfiles/ --work-tree=$HOME"
-git clone --bare git@github.com:kirintwn/dotfiles.git "$XDG_DATA_HOME/dotfiles"
+git clone --bare git@github.com:lesley-tw/dotfiles.git "$XDG_DATA_HOME/dotfiles"
 dotfiles checkout
 dotfiles config --local status.showUntrackedFiles no
-
-ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list

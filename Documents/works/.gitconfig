@@ -1,0 +1,6 @@
+[user]
+  name = lesley_lin
+  email = lesley_lin@trendmicro.com
+
+[url "ssh://git@adc.github.trendmicro.com"]
+  insteadof = https://adc.github.trendmicro.com

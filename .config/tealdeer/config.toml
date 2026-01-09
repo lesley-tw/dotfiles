@@ -27,4 +27,4 @@ compact = false
 use_pager = true
 
 [directories]
-cache_dir = "/home/kirintw/.cache/tealdeer/"
+cache_dir = "/home/lesley_lin/.cache/tealdeer/"

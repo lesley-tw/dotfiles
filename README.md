@@ -16,8 +16,6 @@ My lovely dotfiles, managed with git bare repository, adhering [XDG Base Directo
   - bat config
   - tealdeer config
   - k9s config
-  - i3 config
-  - karabiner (for MacOS)
   - yabai config (for MacOS)
   - skhd config (for MacOS)
 
@@ -58,7 +56,7 @@ My lovely dotfiles, managed with git bare repository, adhering [XDG Base Directo
   dotfiles add $HOME/.config/git/*
   dotfiles commit -m "feat: add git config files"
 
-  dotfiles remote add origin git@github.com:kirintwn/dotfiles.git
+  dotfiles remote add origin git@github.com:lesley-tw/dotfiles.git
   dotfiles push origin main
   ```
 
@@ -92,7 +90,7 @@ My lovely dotfiles, managed with git bare repository, adhering [XDG Base Directo
      You can use [`scripts/setup.zsh`](scripts/setup.zsh) by
 
      ```bash
-     curl -sL https://raw.githubusercontent.com/kirintwn/dotfiles/main/scripts/setup.zsh | zsh
+     curl -sL https://raw.githubusercontent.com/lesley-tw/dotfiles/main/scripts/setup.zsh | zsh
      ```
 
      or clone manually using the commands below:
@@ -100,7 +98,7 @@ My lovely dotfiles, managed with git bare repository, adhering [XDG Base Directo
      ```bash
      export XDG_DATA_HOME="$HOME/.local/share"
      alias dotfiles="git --git-dir=$XDG_DATA_HOME/dotfiles/ --work-tree=$HOME"
-     git clone --bare git@github.com:kirintwn/dotfiles.git "$XDG_DATA_HOME/dotfiles"
+     git clone --bare git@github.com:lesley-tw/dotfiles.git "$XDG_DATA_HOME/dotfiles"
 
      # please remove all conflict files in $HOME before running dotfiles checkout
      dotfiles checkout
@@ -129,7 +127,3 @@ My lovely dotfiles, managed with git bare repository, adhering [XDG Base Directo
 - [[Atlassian] The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
 
 - [Zinit Offical Wiki](https://zdharma.org/zinit/wiki/)
-
-#### Original written: [@lesley-tw](https://github.com/lesley-tw)
-
-#### Edited by: [@kirintwn](https://github.com/kirintwn)

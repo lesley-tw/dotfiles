@@ -1,0 +1,27 @@
+# Secrets and sensitive files
+# Note: Using bare repo + 1Password, so sensitive files are simply not added
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor temporary files
+*~
+.swp
+.swo
+*.tmp
+
+# Local environment overrides
+.env.local
+.env.*.local
+
+# Personal notes and temporary files
+TODO.md
+NOTES.md
+temp/
+tmp/

@@ -1,19 +1,18 @@
 [user]
-  name = kirintwn
-  email = me@kirintw.me
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIyxG7FgngiJTErYyNxg03KoNPkwaSSqQCUkzmvLm5hk
+  name = lesley-tw
+  email = lesleyl.tw@gmail.com
 
 #############################################################
 # switch / replace git user conditionally                   #
 # reference: https://git-scm.com/docs/git-config#_includes  #
 #                                                           #
 # [user]                                                    #
-#   name = kirintwn                                         #
-#   email = kirin@xendit.co                                 #
+#   name = lesley-tw                                        #
+#   email = lesleyl.tw@gmail.com                            #
 #############################################################
 
-[includeIf "gitdir:~/Documents/works/xendit/"]
-  path = ~/Documents/works/xendit/.gitconfig
+[includeIf "gitdir:~/Documents/works/"]
+  path = ~/Documents/works/.gitconfig
 
 [core]
   ignorecase = false
@@ -36,16 +35,9 @@
 [color]
   ui = auto
 
-[gpg]
-  format = ssh
-
-[gpg "ssh"]
-  program = "/opt/1Password/op-ssh-sign"
-
-[commit]
-  gpgsign = true
-
 [delta]
+  navigate = true
+  dark = true
   number = true
   side-by-side = true
   syntax-theme = TwoDark
@@ -56,4 +48,30 @@
   hunk-header-decoration-style = none
 
 [alias]
+  parent = "! git log --pretty=format:'%D' HEAD^ | grep 'origin/' | head -n1 | sed 's@origin/@@' | sed 's@,.*@@'"
+  lg = log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset %C(yellow)%d%Creset' --abbrev-commit
   ltag = log --simplify-by-decoration --tags --pretty='tformat:%C(auto)%h %as%d'
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+  newHighlight = green bold 22
+
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+  whitespace = red reverse
+
+[diff-so-fancy]
+  markEmptyLines = false
