@@ -11,8 +11,9 @@ alias printpath='print -rl $path'
 
 alias cat="bat"
 alias catp="bat -p"
-alias lc="exa --long --header --icons -s type"
-alias ls="lsd"
+alias lc="eza --long --header --icons -s type"
+alias ls="eza --color=always --icons --group-directories-first "
+alias tree="eza --color=always --icons --group-directories-first --tree --git-ignore"
 alias rg='rg --smart-case'
 alias rgf='rg --files | rg --smart-case --sort path'
 alias vi="nvim"

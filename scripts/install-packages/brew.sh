@@ -36,14 +36,14 @@ brew install kubernetes-cli
 brew install k9s
 brew install helm
 brew install tealdeer
+brew install docker
+brew install colima
 
 brew tap homebrew/cask-fonts
 brew install --cask font-fira-code-nerd-font
 brew install --cask google-chrome
 brew install --cask visual-studio-code
 brew install --cask dbeaver-community
-brew install --cask docker
-brew install --cask docker-desktop
 brew install --cask iterm2
 brew install --cask itsycal
 brew install --cask sublime-text

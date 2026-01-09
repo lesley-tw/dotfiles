@@ -72,7 +72,6 @@ touch "$XDG_DATA_HOME/zlua/.zlua"
 mkdir -p "$HOME/.local/bin"
 
 dspullall
-fetchkeys
 
 alias dotfiles="git --git-dir=$XDG_DATA_HOME/dotfiles/ --work-tree=$HOME"
 git clone --bare git@github.com:lesley-tw/dotfiles.git "$XDG_DATA_HOME/dotfiles"
